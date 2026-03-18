@@ -1,7 +1,6 @@
 #02barcharts.py
 
 #Bar chart - good choice when we need to show how some quantity varies among some discrete set of items
-#import pyplot module in Matplotlib library
 import matplotlib.pyplot
 
 years = [1950, 1960, 1970, 1980, 1990, 2000, 2010]
