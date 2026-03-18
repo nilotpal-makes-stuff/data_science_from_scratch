@@ -1,4 +1,4 @@
-#02barcharts.py
+#02barcharts-p02customiseBarPlot.py
 
 #Bar chart - Can also be used to plot histograms of bucketed numeric values
 # Useful for visually exploring how values are distributed
@@ -11,23 +11,23 @@ random.seed(10)
 
 #Grades
 grades = [random.randint(0,100) for i in range(200)]
-print(f"Grades = {grades}")
+#print(f"Grades = {grades}")
 
 #Frequency of grades in range
 #min(grade//10, 90) -  converts score 100 into 90
 histogram = Counter(min(grade//10, 90) for grade in grades)
-print(histogram)
+#print(histogram)
 
 #Create a bar chart
 #Syntax : matplotlib.pyplot.bar(x, height, width=0.8, bottom=None, *, align='center', data=None, **kwargs)
-pyplot.bar([x*10 for x in histogram.keys()], histogram.values(), width=8, color='red', edgecolor=(0,0,0))
+pyplot.bar([x*10+5 for x in histogram.keys()], histogram.values(), width=10, color='red', edgecolor=(0,0,0))
 #Here   x-axis = years
 #       y-axis = gdp
 #       width = width of bar
 #       edgecolor = color of edge
 #Many more customisation options exist
 
-pyplot.bar([x*10+1 for x in histogram.keys()], histogram.values(), width=4, color='blue', edgecolor=(0,0,0))
+#pyplot.bar([x*10+1 for x in histogram.keys()], histogram.values(), width=4, color='blue', edgecolor=(0,0,0))
 
 #axis sets start end points for x and y axis
 #Syntax : matplotlib.pyplot.axis(arg=None, /, *, emit=True, **kwargs)
@@ -50,4 +50,5 @@ pyplot.xlabel("Score")
 pyplot.show()
 
 #Matplotlib documentation - https://matplotlib.org
+#NOTE : It is bad form for the y-axis to not start at zero - this can cause viewers of graph to misinterpret data.
 

@@ -1,4 +1,4 @@
-#02barcharts.py
+#02barcharts-p01Intro.py
 
 #Bar chart - good choice when we need to show how some quantity varies among some discrete set of items
 import matplotlib.pyplot
